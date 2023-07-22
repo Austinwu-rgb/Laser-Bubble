@@ -1,0 +1,7 @@
+It is good practice to make a sprite face right by default 
+IF it is going to be ROTATING, because 0 degrees is to the right. If you don't do this and you rotate 90 degrees for example, the sprite won't be facing up .
+
+Script functions are global, refernce them directly. 
+Event functions are isolated to the event like var.
+
+Middle click things to reference them in the manual. 
