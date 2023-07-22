@@ -11,10 +11,18 @@ var _temp = 0;
 	Using #region and #endregion creates a section of code you can collapse. you can also name the region such as "#region myRegion"
 */
 
- 
+//Movement 
 hsp = 0;
 vsp = 0;
 moveSpd = 3;
+
+//Cannon
+
+cannonDir = 0;
+cannonKnockback = 0;
+shootTimer = 0;
+
+
 
 
 

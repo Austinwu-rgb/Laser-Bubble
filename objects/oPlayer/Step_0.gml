@@ -26,6 +26,38 @@ if (_moveX != 0 or _moveY != 0) {
 	
 }
 
+
+#region shoot
+
+cannonDir = point_direction(x, y, mouse_x, mouse_y); 
+
+if (mouse_check_button(mb_left)) {	
+	if (--shootTimer <= 0) {
+		//Create Laser
+		/*Whatever you put inside the with statement, the following code will be SCOPED to the object or instance.
+		this is why we have to use "other.cannonDir" to refer to cannonDir outside. 
+		*/
+		
+		with(instance_create_layer(x + lengthdir_x(20, cannonDir), y + lengthdir_y(20, cannonDir), "Laser", oLaserBeam)) {
+			image_angle = other.cannonDir;
+		}
+		
+		//Knockback
+		hsp -= lengthdir_x(3, cannonDir);
+		vsp -= lengthdir_y(3, cannonDir); 
+		cannonKnockback = 6;
+		
+		//Shoot Timer
+		shootTimer = 6;
+	}	
+} else {
+	shootTimer = 0;
+	//this way if you release mouse, it won't still be at 6 timer
+}
+
+#endregion
+
+
 // Move
 //green variables are built-in variables, such as x and y (position)
 // sprite_index returns the sprite name
@@ -33,3 +65,6 @@ if (_moveX != 0 or _moveY != 0) {
 
 x += hsp;
 y += vsp;
+
+//Deal with these values
+cannonKnockback = Approach(cannonKnockback, 0, 1);

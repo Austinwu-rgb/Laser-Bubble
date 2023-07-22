@@ -1,10 +1,10 @@
 {
   "FolderOrderSettings": [
-    {"name":"Player","order":2,"path":"folders/Player.yy",},
-    {"name":"Global","order":4,"path":"folders/Global.yy",},
-    {"name":"Laser","order":2,"path":"folders/Player/Laser.yy",},
     {"name":"~Notes","order":6,"path":"folders/~Notes.yy",},
+    {"name":"Global","order":4,"path":"folders/Global.yy",},
     {"name":"Scripts","order":2,"path":"folders/Global/Scripts.yy",},
+    {"name":"Player","order":2,"path":"folders/Player.yy",},
+    {"name":"Laser","order":2,"path":"folders/Player/Laser.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"oLaserImpact","order":3,"path":"objects/oLaserImpact/oLaserImpact.yy",},
