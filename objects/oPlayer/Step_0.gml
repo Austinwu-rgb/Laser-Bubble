@@ -38,14 +38,24 @@ if (mouse_check_button(mb_left)) {
 		this is why we have to use "other.cannonDir" to refer to cannonDir outside. 
 		*/
 		
+		//The arguement where I have "Laser" references the layer in the room. 
 		with(instance_create_layer(x + lengthdir_x(20, cannonDir), y + lengthdir_y(20, cannonDir), "Laser", oLaserBeam)) {
-			image_angle = other.cannonDir;
+			image_angle = other.cannonDir + random_range(-4,4);
 		}
 		
 		//Knockback
 		hsp -= lengthdir_x(3, cannonDir);
 		vsp -= lengthdir_y(3, cannonDir); 
 		cannonKnockback = 6;
+		
+		
+		/* Play Sound Effect 
+			It is good to slightly randomize repetitive sounds as it will sound more natural.
+		*/
+
+		audio_play_sound(snShoot, 2, false, 1, 0, random_range(0.7,1.3));
+		
+		
 		
 		//Shoot Timer
 		shootTimer = 6;
@@ -61,10 +71,15 @@ if (mouse_check_button(mb_left)) {
 // Move
 //green variables are built-in variables, such as x and y (position)
 // sprite_index returns the sprite name
-// We have seperate move variable in case we collide with something, this way we don't have to move our position back, etc.
 
-x += hsp;
-y += vsp;
+move_and_collide(hsp,vsp,oWall);
+
 
 //Deal with these values
 cannonKnockback = Approach(cannonKnockback, 0, 1);
+
+// Trail
+if (irandom(4) == 0) {
+	//The depth arg will place the new instance above the player's depth if it is larger, and below if it is smaller.
+	instance_create_depth(x+random_range(-6,6), y+random_range(-6,6), depth+1, oPlayerTrail);
+}

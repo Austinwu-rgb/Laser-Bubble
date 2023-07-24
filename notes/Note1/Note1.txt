@@ -5,3 +5,18 @@ Script functions are global, refernce them directly.
 Event functions are isolated to the event like var.
 
 Middle click things to reference them in the manual. 
+
+Objects and stuff in the asset browser are also global variables you can use in your code. (but they don't use 'global.')
+
+"random(4)" will return a number between 0 and 4 inclusive. 
+"irandom(4)" will return an integer between 0 and 4 inclusive 
+"random(2,4)" same thing but in a range
+"irandom(2,4)" same thinb ut in a range.
+
+It's good to make important objects as parent objects. These have no difference except they can inheret children objects. 
+One example would be the collision object.
+
+"with()" only references the instance, not the object
+If you provide an instance ID to the "with" function it will modify the specific instance.
+However if you provide the object name, it will loop over every single instance of that object. 
+It will only impact instances that are already created, not ones created after. 
