@@ -1,7 +1,7 @@
 It is good practice to make a sprite face right by default 
 IF it is going to be ROTATING, because 0 degrees is to the right. If you don't do this and you rotate 90 degrees for example, the sprite won't be facing up .
 
-Script functions are global, refernce them directly. 
+Script functions are global, reference them directly. 
 Event functions are isolated to the event like var.
 
 Middle click things to reference them in the manual. 
@@ -20,3 +20,6 @@ One example would be the collision object.
 If you provide an instance ID to the "with" function it will modify the specific instance.
 However if you provide the object name, it will loop over every single instance of that object. 
 It will only impact instances that are already created, not ones created after. 
+
+application surface size is like the render size, if surface size and window size are bigger than the game, it will render sub-pixels.
+Set application surface size to same as camera/viewport if you don't want upscaling

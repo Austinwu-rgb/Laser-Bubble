@@ -13,7 +13,7 @@
   "duration": 0.219274,
   "parent": {
     "name": "Sound Effects",
-    "path": "folders/Player/Laser/Sound Effects.yy",
+    "path": "folders/Sound Effects.yy",
   },
   "preload": false,
   "sampleRate": 44100,

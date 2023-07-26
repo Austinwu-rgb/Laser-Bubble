@@ -48,6 +48,8 @@ if (mouse_check_button(mb_left)) {
 		vsp -= lengthdir_y(3, cannonDir); 
 		cannonKnockback = 6;
 		
+		// Screen Shake
+		ScreenShake(2, 2);
 		
 		/* Play Sound Effect 
 			It is good to slightly randomize repetitive sounds as it will sound more natural.
@@ -67,6 +69,15 @@ if (mouse_check_button(mb_left)) {
 
 #endregion
 
+// Hurt
+
+var _enemy = instance_place(x+hsp, y+vsp, pEnemy);
+if (_enemy != noone && _enemy.canCollide) {
+		_enemy.knockback = 8;
+		_enemy.knockbackDir = 180 - _enemy.playerDir;
+		_enemy.hp -= 1/10;
+		HurtPlayer();
+}
 
 // Move
 //green variables are built-in variables, such as x and y (position)
@@ -77,6 +88,7 @@ move_and_collide(hsp,vsp,oWall);
 
 //Deal with these values
 cannonKnockback = Approach(cannonKnockback, 0, 1);
+flash = max(flash-0.1,0);
 
 // Trail
 if (irandom(4) == 0) {

@@ -15,7 +15,21 @@ if (!collided) {
 		move_and_collide(_hsp,_vsp,_collider);
 		
 		with(instance_create_layer(x,y,layer,oLaserImpact)) {
+			//other.myVar is used to reference OUTSIDE the with statement (so in this case, the laserBeam)
 			image_angle = other.image_angle;
+		}
+		
+		with(_collider) {
+			//check if a object is child of another object
+			//object_index is the object index of the current object (note that this is inside a with statement, so it is _collider)
+			if (object_is_ancestor(object_index, pEnemy)) {
+				flash = 1;
+				hp--;
+				knockback = 3;
+				knockbackDir = other.image_angle;
+				ScreenShake(4,2);
+				
+			}
 		}
 		
 		audio_play_sound(snImpact,2,false,1,0,random_range(0.7,1.3)); 

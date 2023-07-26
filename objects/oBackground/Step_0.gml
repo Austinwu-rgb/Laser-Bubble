@@ -9,6 +9,7 @@ for(var i =0; i < array_length(bubbles); i++) {
 		//sub images are the individual frames of the sprite (so in this we are choosing a random frame of the sprite)
 		bubbles[i].subimg = irandom(bubbleFrames-1);
 		bubbles[i].x = random(room_width);
+		bubbles[i].y = random(room_height);
 		bubbles[i].spd = random_range(0.01,1);
 	}
 	
