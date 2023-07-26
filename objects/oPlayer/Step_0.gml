@@ -74,7 +74,7 @@ if (mouse_check_button(mb_left)) {
 var _enemy = instance_place(x+hsp, y+vsp, pEnemy);
 if (_enemy != noone && _enemy.canCollide) {
 		_enemy.knockback = 8;
-		_enemy.knockbackDir = 180 - _enemy.playerDir;
+		_enemy.knockbackDir = 180 + _enemy.playerDir;
 		_enemy.hp -= 1/10;
 		HurtPlayer();
 }

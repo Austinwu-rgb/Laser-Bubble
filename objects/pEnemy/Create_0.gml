@@ -20,5 +20,13 @@ flash = 0;
 knockback = 0;
 knockbackDir = 0;
 
+//Particles
+particles = instance_create_depth(x, y, depth+1, oEnemyParticles);
+particles.creator = id;
+particles.particleColor = particleColor;
+
+
+
+
 
 
