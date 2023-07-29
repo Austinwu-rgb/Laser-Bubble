@@ -10,6 +10,15 @@ window_set_size(960, 540);
 
 window_center();
 
+// Shader Uniforms
+global.uWhiteAlpha = shader_get_uniform(shWhite, "alpha");
+
+
+// Game
+global.score = 0;
+
+
+
 room_goto_next(); 
 
 
