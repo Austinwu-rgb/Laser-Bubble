@@ -13,7 +13,7 @@
   "duration": 0.273696,
   "parent": {
     "name": "Sound Effects",
-    "path": "folders/Sound Effects.yy",
+    "path": "folders/Audio/Sound Effects.yy",
   },
   "preload": false,
   "sampleRate": 48000,

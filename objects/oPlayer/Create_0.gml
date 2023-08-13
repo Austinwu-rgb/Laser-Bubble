@@ -1,5 +1,6 @@
 /// @desc Player Variable
 
+event_inherited();
 
 /*
 normal variables are accessible by all events in the object. 

@@ -25,3 +25,4 @@ application surface size is like the render size, if surface size and window siz
 Set application surface size to same as camera/viewport if you don't want upscaling
 
 The advantage of using built-in variables is that you don't have to declare them in the create event. 
+

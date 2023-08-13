@@ -20,13 +20,26 @@ flash = 0;
 knockback = 0;
 knockbackDir = 0;
 
-//Particles
+// Warning
+
+warning = instance_create_depth(x,y,depth+2,oEnemyWarning);
+warning.image_blend = particleColor;
+warning.image_index = enemyNumber;
+
+// Intro
+waitTime = 20 + instance_number(pEnemy) * 5;
+introFrame = 15;
+maxIntroFrame = introFrame;
+canCollide = false;
+
+var _dirFromCenter = point_direction(room_width/2, room_height/2, x, y);
+x += lengthdir_x(350, _dirFromCenter);
+y += lengthdir_y(350, _dirFromCenter);
+
+offScreenX = x;
+offScreenY = y;
+
+// Particles
 particles = instance_create_depth(x, y, depth+1, oEnemyParticles);
 particles.creator = id;
 particles.particleColor = particleColor;
-
-
-
-
-
-

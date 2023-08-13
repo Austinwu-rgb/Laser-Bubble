@@ -16,9 +16,26 @@ global.uWhiteAlpha = shader_get_uniform(shWhite, "alpha");
 
 // Game
 global.score = 0;
+global.title = true;
+global.gameStart = false;
 
 
+// Music
+global.music = [
+	[oBasicEnemy, mBasicEnemy],
+	[oGunner, mGunner],
+	[oTank, mTank],
+	[oBomb, mBomb],
+	[oClock, mClock]
+]
+
+audio_play_sound(mDefault, 1, true);
+for(var i = 0 ; i < array_length(global.music); i++) {
+	global.music[i][1] = audio_play_sound(global.music[i][1], 1, true, 0);
+}
 
 room_goto_next(); 
+
+
 
 

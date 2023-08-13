@@ -6,13 +6,16 @@
 	For angles, 0 degrees would be the right of a circle in gamemaker. 
 */
 
+//exit is like "continue" for an event
+if (dead) exit;
+
 // Set Speed
 
 var _moveX = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 var _moveY = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
 if (_moveX != 0 or _moveY != 0) {
-	
+	 global.gameStart = true;
 	//We use an if statement because if moth _moveX and _moveY are 0, the point_direction function will still return 0,0 when the coordinates match.
 	
 	var _dir = point_direction(0,0,_moveX,_moveY);
@@ -33,6 +36,9 @@ cannonDir = point_direction(x, y, mouse_x, mouse_y);
 
 if (mouse_check_button(mb_left)) {	
 	if (--shootTimer <= 0) {
+		global.gameStart = true;
+		
+		
 		//Create Laser
 		/*Whatever you put inside the with statement, the following code will be SCOPED to the object or instance.
 		this is why we have to use "other.cannonDir" to refer to cannonDir outside. 
